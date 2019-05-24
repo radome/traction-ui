@@ -1,8 +1,8 @@
-dist: trusty
+dist: xenial
 sudo: required
 language: node_js
 node_js:
-  - 10.9.0
+  - 11.14.0
 
 addons:
   chrome: stable
@@ -14,7 +14,7 @@ script:
   - yarn test
   - yarn lint
 
-before_deploy: "./compile-build.sh release.tar.gz dist staging"
+before_deploy: "./compile-build.sh release.tar.gz staging"
 
 deploy:
   provider: releases
